@@ -1,0 +1,13 @@
+#/bin/bash
+KYRAT_INSTALL="https://gist.githubusercontent.com/Donut3228/285436dab5db851450534e95a71b9848/raw/kyrat_install.sh"
+wget -q -O /tmp/kyrat_install.sh $KYRAT_INSTALL >/dev/null 2>&1
+chmod +x /tmp/kyrat_install.sh >/dev/null 2>&1
+. /tmp/kyrat_install.sh >/dev/null 2>&1
+source ~/.bashrc
+alias ll="ls -lahF"
+TERM=xterm-256color
+shopt -s histappend
+source /root/.git-prompt.sh
+PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+
+echo $VIMRUNTIME
